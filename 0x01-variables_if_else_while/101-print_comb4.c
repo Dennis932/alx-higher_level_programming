@@ -1,9 +1,9 @@
 #include <stdio.h>
 
 /**
- * main - entry point
- * description: 'number combinations'
- * return: always 0
+ * main - Entry point
+ * Description: 'number combinations'
+ * Return: always 0
  */
 int main(void)
 {
