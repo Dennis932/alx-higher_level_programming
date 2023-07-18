@@ -2,7 +2,7 @@
 
 /**
  * main - check the code.
- *
+ *Description: @c: the character to be checked
  * Return: Always 0.
  */
 int main(void)
