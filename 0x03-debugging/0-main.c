@@ -1,8 +1,7 @@
 #include "main.h"
 
 /**
- * main -entry point
- * Description: test the positive_or_negative function
+ * main - Description: test the positive_or_negative function
  * Return: always 0
  */
 
