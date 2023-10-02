@@ -40,7 +40,7 @@ void check_elf(unsigned char *e_ident)
 
 /**
  * print_magic - Prints ELF header.
- * @e_ident: A pointer 
+ * @e_ident: A pointer
  */
 void print_magic(unsigned char *e_ident)
 {
@@ -61,7 +61,7 @@ void print_magic(unsigned char *e_ident)
 
 /**
  * print_class - ELF header.
- * @e_ident: A pointer 
+ * @e_ident: A pointer
  */
 void print_class(unsigned char *e_ident)
 {
@@ -85,7 +85,7 @@ void print_class(unsigned char *e_ident)
 
 /**
  * print_data - ELF header.
- * @e_ident: A pointer 
+ * @e_ident: A pointer
  */
 void print_data(unsigned char *e_ident)
 {
@@ -258,7 +258,7 @@ void close_elf(int elf)
  * @argc: The number of arguments .
  * @argv: arguments.
  *
- * Return: 0 
+ * Return: 0
  */
 int main(int __attribute__((__unused__)) argc, char *argv[])
 {
