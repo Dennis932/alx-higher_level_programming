@@ -1,44 +1,22 @@
-
 #!/usr/bin/python3
-"""
-Module that connects a python script to a database
-"""
+
+"""Module that lists all states from the hbtn_0e_0_usa database."""
+
+import sys
+import MySQLdb
 
 if __name__ == "__main__":
 
-    import MySQLdb
-    from sys import argv
+    # Get MySQL credentials and search name from command-line arguments
+    # and # Connect to MySQL server
+    db = MySQLdb.connect(user=sys.argv[1], passwd=sys.argv[2], db=sys.argv[3])
+    c = db.cursor()
 
-    # Connect database using command-line arguments
-    my_db = MySQLdb.connect(
-        host='localhost',
-        user=argv[1],
-        password=argv[2],
-        db=argv[3],
-        port=3306
-        )
+    # Execute the SQL query to retrieve states with the specified name
+    c.execute("SELECT * \
+                 FROM `states` \
+                WHERE BINARY `name` = '{}'".format(sys.argv[4]))
 
-    # Create cursor obj to interact with database
-    my_cursor = my_db.cursor()
-
-    # Execute a SELECT query to fetch data
-    my_cursor.execute(
-        """
-        SELECT * FROM states  WHERE name LIKE BINARY '{}'
-        ORDER BY states.id ASC
-        """.format(argv[4])
-        )
-
-    # fetch all the data returned by the query
-    my_data = my_cursor.fetchall()
-
-    # Iterate through the fetched data and print each row
-    for row in my_data:
-        print(row)
-
-    # Close all cursors
-    my_cursor.close()
-
-    # Close all databases
-    my_db.close()
+    # Fetch all rows and print the states
+    [print(state) for state in c.fetchall()]
 
