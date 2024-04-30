@@ -1,5 +1,5 @@
 
 #!/bin/bash
-#Takes in a URL and send a request to it
-curl -s "$1" | wc -c
+# Sends a request to that URL, and displays the size of the body of the response
+curl -s "${1}" | wc -c
 
